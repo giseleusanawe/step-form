@@ -1,82 +1,138 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <title>Multi-step form</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image" size="32x32" href="./assets/images/favicon-32x32.png">
+</head>
+<body>
+  <main class="main">
+  <div class="steps-container">
+    <!-- IMPORTANT -->
+    <!-- Check inside the design folder there's all images related to design, you're required to do both mobile and desktop -->
+    <!-- Feel free to create all pages you think are required -->
 
-    <title>Multi-step form</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href=" [Ubuntu](https://fonts.google.com/specimen/Ubuntu)"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <div class="container1">
-        <div></div>
-        <div class="content">
-          <div class="steps">
-            <div class="circle1"><h1 style="color: black;">1<h1></div>
-            <div class="texts">
-              <p>STEP 1</p>
-              <h1>YOUR INFO</h1>
-            </div>
-          </div>
-          <div class="steps">
-            <div class="circle"><h1>2<h1></div>
-            <div class="texts">
-              <p>STEP 2</p>
-              <h1>SELECT PLAN</h1>
-            </div>
-          </div>
-          <div class="steps">
-            <div class="circle"><h1>3<h1></div>
-            <div class="texts">
-              <p>STEP 3</p>
-              <h1>ADD-ONS</h1>
-            </div>
-          </div>
-          <div class="steps">
-            <div class="circle"><h1>4<h1></div>
-            <div class="texts">
-              <p>STEP 4</p>
-              <h1>SUMMARY</h1>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-      
-      <div class="container2">
-        <div class="content2">
-          <h1>Personal info</h1>
-          <p>Please provide your name, email address, and phone number.</p>
-          <form>
-            <label>Name</label><br />
-            <input
-              type="text"
-              name="username"
-              placeholder="e.g. Stephen King"
-            />
-            <label>Email address</label>
-            <input
-              type="text"
-              name="email"
-              placeholder="eg.stephenking@lorem.com"
-            />
-            <label>Phone number</label>
-            <input type="phone" placeholder="e.g +1 234 567 890" />
-          </form>
-          <button>Next step</button>
-        </div>
+    <!-- Step 1 -->
+  <div class="side-left">
+    <div class="stepi">
+      <div class="num" onmouseover="one()">1</div>
+      <div class="text">
+        <p class="sub">STEP1</p>
+        <p class="mini">Your Info</p>
       </div>
     </div>
-
-      <!-- IMPORTANT -->
-      <!-- Check inside the design folder there's all images related to design, you're required to do both mobile and desktop -->
-      <!-- Feel free to create all pages you think are required -->
+    <div class="stepi">
+      <div class="num"onmouseover="two()">2</div>
+      <div class="text">
+        <p class="sub">STEP2</p>
+        <p class="mini">Select plan</p>
+      </div>
     </div>
-  </body>
+    <div class="stepi">
+      <div class="num">3</div>
+      <div class="text">
+        <p class="sub" onmouseover="four()">STEP3</p>
+        <p class="mini">Add-ons</p>
+      </div>
+    </div>
+    <div class="stepi">
+      <div class="num"onmouseover="four()">4</div>
+      <div class="text">
+        <p class="sub">STEP4</p>
+        <p class="mini">Summary</p>
+      </div>
+    </div>
+  </div>
+<div class="container">
+  <form class="step" id="form">
+    <h3 class="title">Personal info</h3>
+    <p class="describe"> Please provide your name, email address, and phone number.</p>
+    <ul class="list">
+      <li class="item">
+        <div class="input-label">
+          <p class="label">Name</p>
+        </div>
+        <input type="text" class="input" placeholder="e.g. Stephen King">
+      </li>
+      <li class="item">
+        <div class="input-label">
+          <p class="label">Email Address</p>
+        </div>
+        <input type="email" class="input" placeholder="e.g. Stephenking@lorem.com">
+      </li>
+      <li class="item">
+        <div class="input-label">
+          <p class="label">Phone Number</p>
+        </div>
+        <input type="number" class="input" placeholder="e.g. +1 234 567 890">
+      </li>
+    </ul>
+    <button type="button" id="btn"> Next Step</button>
+  </form>
+<!-- Step 2 -->
+<div class="step" id="step-2">
+<h3 class="title">Select your plan</h3>
+<p class="describe">You have the option of monthly or yearly billing.</p>
+<div class="plan-card-container" id="plan-cards">
+<div class="plan-card card">
+  <div class="card-img">
+    <img src="./assets/images/icon-arcade.svg" alt="arcade">
+  </div>
+  <div class="plan-price">
+    <p class="card-name" id="arcade">Arcade</p>
+    <p class="card-price">$ 9/mo</p>
+  </div>
+</div>
+<div class="plan-card card">
+  <div class="card-img">
+    <img src="./assets/images/icon-advanced.svg" alt="arcade">
+  </div>
+  <div class="plan-price">
+    <p class="card-name" id="arcade">Advanced</p>
+    <p class="card-price">$ 12/mo</p>
+  </div>
+</div>
+<div class="plan-card card">
+  <div class="card-img">
+    <img src="./assets/images/icon-pro.svg" alt="arcade">
+  </div>
+  <div class="plan-price">
+    <p class="card-name" id="arcade">Pro</p>
+    <p class="card-price">$ 15/mo</p>
+  </div>
+</div>
+</div>
+<div class="toggle__container">
+  <p class="monthly__plan selected__plan" id="monthly">Monthly</p>
+  <div class="toggle">
+    <div class="toggle__circle" id="toggle"></div>
+  </div>
+  <p class="yearly__plan" id="yearly">Yearly</p>
+</div>
+<div class="button">
+  <button type="button" id="but">Go back</button>
+  <button type="button" id="btn"> Next Step</button>
+  </div>
+</div>
+<!-- Step 4 -->
+<div class="step last__step" id="thank-you">
+  <div class="final__img">
+    <img src="./assets/images/icon-thank-you.svg" alt="" />
+  </div>
+  <h3 class="title">Thank you!</h3>
+  <p class="describe">
+    Thanks for confirming your subscription! We hope you have fun
+    using our platform. If you ever need support, please feel free to
+    email us at support@loremgaming.com.
+  </p>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</main>
+<script src="index.js"></script>
+</body>
 </html>
