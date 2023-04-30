@@ -1,7 +1,9 @@
 function one() {
+    document.getElementById("num").style.backgroundColor= "hsl(228, 100%, 84%)";
     document.getElementById("form").style.display= "block";
     document.getElementById("step-2").style.display = "none";
     document.getElementById("thank-you").style.display = "none";
+    
 }
 function two() {
     document.getElementById("step-2").style.display = "block";
